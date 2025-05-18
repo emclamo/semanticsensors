@@ -1,6 +1,7 @@
 ## 📦 Project Overview: PAnalytics Zenodo Archive System
 
-![Semantic Overview](./images/overview.png)
+
+![Semantic Overview](overview.png)
 
 This project automates the metadata preparation, validation, and upload of research artifacts (PDFs and other data files) to [Zenodo](https://zenodo.org/) under the `semanticsensors` community.
 
