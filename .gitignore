@@ -1,0 +1,14 @@
+# Virtual environment
+.venv/
+__pycache__/
+*.pyc
+
+# Logs and temporary
+logs/
+*.log
+*.DS_Store
+
+# System + IDE
+.vscode/
+.idea/
+
