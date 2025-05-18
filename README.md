@@ -1,5 +1,5 @@
 ## 📦 Project Overview: PAnalytics Zenodo Archive System
-
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.15460328.svg)](https://doi.org/10.5281/zenodo.15460328)
 
 ![Semantic Overview](overview.png)
 
