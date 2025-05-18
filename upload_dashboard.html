@@ -1,0 +1,590 @@
+<html>
+<head>
+<title>Zenodo Upload Dashboard</title>
+<style>
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: radial-gradient(circle, #1f1f1f, #0d0d0d);
+    color: #eee;
+    padding: 20px;
+}
+select {
+    margin: 10px;
+    padding: 6px;
+    background-color: #333;
+    color: #fff;
+    border: 1px solid #666;
+    border-radius: 4px;
+}
+table {
+    border-collapse: collapse;
+    margin-top: 20px;
+    width: 100%;
+}
+th {
+    background-color: #444;
+    color: #f0f0f0;
+    padding: 8px;
+}
+td {
+    background-color: #222;
+    padding: 8px;
+    border: 1px solid #444;
+}
+tr:hover td {
+    background-color: #2a2a2a;
+}
+td.access-open { color: #9fdb6b; font-weight: bold; }
+td.access-restricted { color: #f79c9c; font-weight: bold; }
+td.access-closed { color: #ff6666; font-weight: bold; }
+td.access-embargoed { color: #ffd580; font-weight: bold; }
+a {
+    color: #87cefa;
+    font-weight: bold;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+</style>
+<script>
+function filterTable() {
+    var typeFilter = document.getElementById("typeFilter").value.toLowerCase();
+    var accessFilter = document.getElementById("accessFilter").value.toLowerCase();
+    var rows = document.querySelectorAll("table tbody tr");
+    rows.forEach(row => {
+        var type = row.getAttribute("data-type").toLowerCase();
+        var access = row.getAttribute("data-access").toLowerCase();
+        var show = (typeFilter === "all" || type === typeFilter) &&
+                   (accessFilter === "all" || access === accessFilter);
+        row.style.display = show ? "" : "none";
+    });
+}
+</script>
+</head>
+<body>
+<h1>Zenodo Upload Dashboard</h1>
+<p>Last updated: {timestamp}</p>
+<label for="typeFilter">Filter by Record Type:</label>
+<select id="typeFilter" onchange="filterTable()">
+  <option value="all">Show All</option>
+  <option value="publication">Publication</option>
+  <option value="dataset">Dataset</option>
+  <option value="presentation">Presentation</option>
+  <option value="software">Software</option>
+</select>
+<label for="accessFilter">Filter by Access Right:</label>
+<select id="accessFilter" onchange="filterTable()">
+  <option value="all">Show All</option>
+  <option value="open">Open</option>
+  <option value="restricted">Restricted</option>
+  <option value="closed">Closed</option>
+  <option value="embargoed">Embargoed</option>
+</select>
+<table><thead><tr>
+<th>{escape(col)}</th>
+<th>{escape(col)}</th>
+<th>{escape(col)}</th>
+<th>{escape(col)}</th>
+<th>{escape(col)}</th>
+<th>{escape(col)}</th>
+<th>{escape(col)}</th>
+<th>{escape(col)}</th>
+<th>{escape(col)}</th>
+</tr></thead><tbody>
+<tr {row_attrs}>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td class='{access_class}'>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+</tr>
+<tr {row_attrs}>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td class='{access_class}'>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+</tr>
+<tr {row_attrs}>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td class='{access_class}'>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+</tr>
+<tr {row_attrs}>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td class='{access_class}'>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+</tr>
+<tr {row_attrs}>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td class='{access_class}'>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+</tr>
+<tr {row_attrs}>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td class='{access_class}'>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+</tr>
+<tr {row_attrs}>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td class='{access_class}'>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+</tr>
+<tr {row_attrs}>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td class='{access_class}'>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+</tr>
+<tr {row_attrs}>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td class='{access_class}'>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+</tr>
+<tr {row_attrs}>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td class='{access_class}'>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+</tr>
+<tr {row_attrs}>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td class='{access_class}'>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+</tr>
+<tr {row_attrs}>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td class='{access_class}'>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+</tr>
+<tr {row_attrs}>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td class='{access_class}'>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+</tr>
+<tr {row_attrs}>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td class='{access_class}'>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+</tr>
+<tr {row_attrs}>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td class='{access_class}'>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+</tr>
+<tr {row_attrs}>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td class='{access_class}'>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+</tr>
+<tr {row_attrs}>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td class='{access_class}'>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+</tr>
+<tr {row_attrs}>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td class='{access_class}'>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+</tr>
+<tr {row_attrs}>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td class='{access_class}'>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+</tr>
+<tr {row_attrs}>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td class='{access_class}'>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+</tr>
+<tr {row_attrs}>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td class='{access_class}'>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+</tr>
+<tr {row_attrs}>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td class='{access_class}'>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+</tr>
+<tr {row_attrs}>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td class='{access_class}'>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+</tr>
+<tr {row_attrs}>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td class='{access_class}'>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+</tr>
+<tr {row_attrs}>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td class='{access_class}'>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+</tr>
+<tr {row_attrs}>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td class='{access_class}'>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+</tr>
+<tr {row_attrs}>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td class='{access_class}'>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+</tr>
+<tr {row_attrs}>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td class='{access_class}'>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+</tr>
+<tr {row_attrs}>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td class='{access_class}'>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+</tr>
+<tr {row_attrs}>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td class='{access_class}'>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+</tr>
+<tr {row_attrs}>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td class='{access_class}'>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+</tr>
+<tr {row_attrs}>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td class='{access_class}'>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+</tr>
+<tr {row_attrs}>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td class='{access_class}'>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+</tr>
+<tr {row_attrs}>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td class='{access_class}'>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+</tr>
+<tr {row_attrs}>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td class='{access_class}'>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+</tr>
+<tr {row_attrs}>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td class='{access_class}'>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+</tr>
+<tr {row_attrs}>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td class='{access_class}'>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+</tr>
+<tr {row_attrs}>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td class='{access_class}'>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+</tr>
+<tr {row_attrs}>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td class='{access_class}'>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+</tr>
+<tr {row_attrs}>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td class='{access_class}'>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+</tr>
+<tr {row_attrs}>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td class='{access_class}'>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+</tr>
+<tr {row_attrs}>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td class='{access_class}'>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+</tr>
+<tr {row_attrs}>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td class='{access_class}'>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+</tr>
+<tr {row_attrs}>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td class='{access_class}'>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+</tr>
+<tr {row_attrs}>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td class='{access_class}'>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+<td>{val}</td>
+</tr>
+</tbody></table></body></html>

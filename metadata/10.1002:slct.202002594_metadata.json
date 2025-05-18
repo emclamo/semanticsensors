@@ -1,0 +1,41 @@
+{
+  "title": "UiO\u201066/GO Composites with Improved Electrochemical Properties for Effective Detection of Phosphite(P(III)) in Phosphate(P(V)) Buffer Solutions",
+  "upload_type": "publication",
+  "description": "<jats:title>Abstract</jats:title><jats:p>Measurement of phosphorus is of great significance because it is a key element responsible for eutrophication in water environment. More efforts have been devoted to sensor\u2010based detection of phosphate (P(V)), while few reports on that of phosphite (P(III)) are available due to the interferences from phosphate and/or other species. Here we synthesized UiO\u201066/graphene oxide (GO) composites and first observed that the cooperative utilization of UiO\u201066 and GO may provide a promising strategy to improve the electrochemical performances of MOF hybrid materials for effective detection of phosphite (P(III)) in phosphate (P(V)) buffer solutions (PBS). The current value of the oxidation peak is proportional to the phosphite concentration over the range of 10\u2005\u03bcmol\u2009L<jats:sup>\u22121</jats:sup> \u2010 500\u2005\u03bcmol\u2009L<jats:sup>\u22121</jats:sup>, and the limit of detection is 0.33\u2005\u03bcmol\u2009L<jats:sup>\u22121</jats:sup> (S/N=3) with the lowest value among the reported works.</jats:p>",
+  "creators": [
+    {
+      "name": "Yang, Ying"
+    },
+    {
+      "name": "Wu, Wangui"
+    },
+    {
+      "name": "Wang, Ziyan"
+    },
+    {
+      "name": "Huang, Limei"
+    },
+    {
+      "name": "Ma, Xiuling",
+      "orcid": "0000-0002-1333-8081"
+    },
+    {
+      "name": "Zhang, Zhangjing"
+    },
+    {
+      "name": "Xiang, Shengchang"
+    }
+  ],
+  "doi": "10.1002/slct.202002594",
+  "keywords": [
+    "ChemistrySelect",
+    "Wiley"
+  ],
+  "communities": [
+    {
+      "identifier": "semanticsensors"
+    }
+  ],
+  "access_right": "restricted",
+  "license": "cc-by-4.0"
+}

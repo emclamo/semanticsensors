@@ -1,0 +1,21 @@
+{
+  "title": "Your title here",
+  "upload_type": "publication",
+  "description": "A short summary of the paper or dataset.",
+  "creators": [
+    {
+      "name": "Last, First"
+    }
+  ],
+  "doi": "10.xxxx/xxxxx",
+  "keywords": [
+    "keyword1",
+    "keyword2",
+    "keyword3"
+  ],
+  "communities": [
+    {
+      "identifier": "panalytics"
+    }
+  ]
+}

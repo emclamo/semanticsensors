@@ -1,0 +1,23 @@
+{
+  "title": "Token Overlap Metrics in NLP",
+  "upload_type": "publication",
+  "description": "Explores overlap measures in NLP corpora.",
+  "creators": [
+    {
+      "name": "McLamore, Eric"
+    }
+  ],
+  "doi": "10.1234/abc123",
+  "keywords": [
+    "NLP",
+    "token similarity",
+    "systematic review"
+  ],
+  "communities": [
+    {
+      "identifier": "semanticsensors"
+    }
+  ],
+  "access_right": "restricted",
+  "license": "cc-by-4.0"
+}

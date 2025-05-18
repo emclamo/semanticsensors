@@ -1,0 +1,3 @@
+filename,title,authors,doi,description,keywords,upload_type
+paper1.pdf,Token Overlap Metrics in NLP,"McLamore, Eric",10.1234/abc123,Explores overlap measures in NLP corpora.,"NLP, token similarity, systematic review",publication
+paper2.pdf,Graph Semantics in WordNet,"Smith, Jane; Doe, John",10.5678/def456,Analyzes semantic graph structures using WordNet.,"WordNet, hypernym, graph theory",publication

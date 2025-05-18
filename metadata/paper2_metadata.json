@@ -1,0 +1,26 @@
+{
+  "title": "Graph Semantics in WordNet",
+  "upload_type": "publication",
+  "description": "Analyzes semantic graph structures using WordNet.",
+  "creators": [
+    {
+      "name": "Smith, Jane"
+    },
+    {
+      "name": "Doe, John"
+    }
+  ],
+  "doi": "10.5678/def456",
+  "keywords": [
+    "WordNet",
+    "hypernym",
+    "graph theory"
+  ],
+  "communities": [
+    {
+      "identifier": "semanticsensors"
+    }
+  ],
+  "access_right": "restricted",
+  "license": "cc-by-4.0"
+}
